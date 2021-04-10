@@ -164,7 +164,7 @@
 									<a href="{{route('admin.products')}}" class="cate-link">Products</a>
 								</li>
                                 <li class="category-item">
-									<a href="#" class="cate-link">Manage User</a>
+                                    <a href="{{route('admin.homeslider')}}" class="cate-link">Manage Slider</a>
 								</li>
                                 <li class="category-item">
 									<a href="#" class="cate-link">Manage Homepage</a>
