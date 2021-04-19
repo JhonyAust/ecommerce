@@ -100,7 +100,10 @@
 									<a href="{{route('admin.homeslider')}}" class="cate-link">Manage Slider</a>
 								</li>
                                 <li class="category-item">
-									<a href="#" class="cate-link">Manage Homepage</a>
+                                    <a href="{{route('admin.coupons')}}" class="cate-link">Coupons</a>								
+                                </li>
+                                <li class="category-item">
+                                <a href="{{route('admin.orders')}}" class="cate-link">Orders</a>
 								</li>
 							</ul>
 						</div>

@@ -4994,6 +4994,7 @@ article.single-post blockquote p:last-child::after {
     display: inline-block;
     float: left;
     bottom: auto;
+	margin-right:0;
 }
 
 .flex-control-nav .owl-stage-outer {

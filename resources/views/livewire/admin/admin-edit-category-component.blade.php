@@ -45,12 +45,14 @@
                                                     <label class="col-md-4 control-label">Category Name</label>
                                                     <div class="col-md-4">
                                                         <input type="text" placeholder="Category Name" class="form-control input-md" wire:model="name" wire:keyup="generateslug" :value="name" required autofocus autocomplete="name"/>
+                                                        @error('name') <p class="text-danger">{{$message}}</p> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-4 control-label">Category Slug</label>
                                                     <div class="col-md-4">
                                                         <input type="text" placeholder="Category Slug" class="form-control input-md" wire:model="slug" :value="name" required autofocus autocomplete="slug"/>
+                                                        @error('slug') <p class="text-danger">{{$message}}</p> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -87,7 +89,10 @@
                                     <a href="{{route('admin.homeslider')}}" class="cate-link">Manage Slider</a>
 								</li>
                                 <li class="category-item">
-									<a href="#" class="cate-link">Manage Homepage</a>
+                                    <a href="{{route('admin.coupons')}}" class="cate-link">Coupons</a>								
+                                </li>
+                                <li class="category-item">
+                                <a href="{{route('admin.orders')}}" class="cate-link">Orders</a>
 								</li>
 							</ul>
 						</div>

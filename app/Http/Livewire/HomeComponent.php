@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\HomeSlider;
 use App\Models\Product;
 use Livewire\Component;
+use App\Models\Category;
 
 class HomeComponent extends Component
 {
@@ -12,6 +13,8 @@ class HomeComponent extends Component
     {
         $sliders = HomeSlider:: where('status',1)->get();
         $lproducts = Product::orderBy('created_at','DESC')->get()->take(8);
-        return view('livewire.home-component',['sliders'=>$sliders,'lproducts'=>$lproducts])->layout('layouts.base');
+        $categories = Category::all()->take(5);
+        $sproducts = Product::where('sale_price','>',0)->inRandomOrder()->get()->take(8);
+        return view('livewire.home-component',['sliders'=>$sliders,'lproducts'=>$lproducts,'categories'=>$categories,'sproducts'=>$sproducts])->layout('layouts.base');
     }
 }

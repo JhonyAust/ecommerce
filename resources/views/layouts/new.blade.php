@@ -1,178 +1,234 @@
-<main id="main" class="main-site left-sitebar">
+<main id="main" class="main-site">
 
 		<div class="container">
 
 			<div class="wrap-breadcrumb">
 				<ul>
-					<li class="item-link"><a href="#" class="link">home</a></li>
-					<li class="item-link"><span>Admin</span></li>
+					<li class="item-link"><a href="/" class="link">home</a></li>
+					<li class="item-link"><span>Cart</span></li>
 				</ul>
 			</div>
-			<div class="row">
-
-				<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
-
-                    <div>
-                        <style>
-                            nav svg {
-                                height: 20px;
-                            }
-                            nav .hidden{
-                                display: block !important;
-                            }
-
-                        </style>
-                        <div class="container" style="padding:30px 0; width:98%">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    Add New Product
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <a href="{{route('admin.products')}}" class="btn btn-success pull-right">All Products</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel-body">
-                                            @if(Session::has('message'))
-                                                <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
-                                            @endif
-                                            <form class="form-horizontal" enctype="multipart/form-data">
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label">Product Name</label>
-                                                    <div class="col-md-4">
-                                                        <input type="text" placeholder="Product Name" class="form-control input-md" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label">Product Slug</label>
-                                                    <div class="col-md-4">
-                                                        <input type="text" placeholder="Product Slug" class="form-control input-md" />
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label">Short Description</label>
-                                                    <div class="col-md-4">
-                                                        <textarea class="form-control" placeholder="Short Description"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label">Description</label>
-                                                    <div class="col-md-4">
-                                                        <textarea class="form-control" placeholder="Description"></textarea>
-                                                    </div>
-
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label">Regular Price</label>
-                                                    <div class="col-md-4">
-                                                        <input type="text" placeholder="Regular Price" class="form-control input-md" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label">Sale Price</label>
-                                                    <div class="col-md-4">
-                                                        <input type="text" placeholder="Sale Price" class="form-control input-md" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label">SKU</label>
-                                                    <div class="col-md-4">
-                                                        <input type="text" placeholder="SKU" class="form-control input-md" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label">Stock</label>
-                                                    <div class="col-md-4">
-                                                       <select class = "form-control">
-                                                            <option value="instock">InStock</option>
-                                                            <option value="outstock">OutStock</option>
-                                                       
-                                                       </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label">Featured</label>
-                                                    <div class="col-md-4">
-                                                       <select class = "form-control">
-                                                            <option value="0">No</option>
-                                                            <option value="1">Yes</option>
-                                                       </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label">Quantity</label>
-                                                    <div class="col-md-4">
-                                                        <input type="text" placeholder="Quantity" class="form-control input-md" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label">Product Image</label>
-                                                    <div class="col-md-4">
-                                                        <input type="file" placeholder="Product Image" class="input-file" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label">Category</label>
-                                                    <div class="col-md-4">
-                                                       <select class = "form-control">
-                                                            <option value="">Select Category</option>
-
-                                                            @foreach($categories as $category)
-                                                                <option value="{{$category->id}}">{{$category->name}}</option>
-                                                            $endforeach
-                                                            
-                                                       </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-4 control-label"></label>
-                                                    <div class="col-md-4">
-                                                        <button type="submit"class="btn btn-primary">Submit</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-
-                                        </div>                                    
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-					</div>
-
-				</div><!--end main products area-->
-
-				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sidebar">
-					<div class="widget mercado-widget categories-widget">
-						<div class="widget-content">
-							<ul class="list-category">
-								<li class="category-item">
-									<a href="{{route('admin.dashboard')}}" class="cate-link">Dashboard</a>
-								</li>
-								<li class="category-item">
-									<a href="{{route('admin.categories')}}" class="cate-link">Categories</a>
-								</li>
-								<li class="category-item">
-									<a href="{{route('admin.products')}}" class="cate-link">Products</a>
-								</li>
-                                <li class="category-item">
-									<a href="#" class="cate-link">Manage User</a>
-								</li>
-                                <li class="category-item">
-									<a href="#" class="cate-link">Manage Homepage</a>
-								</li>
-							</ul>
+			<div class=" main-content-area">
+				@if(Cart::instance('cart')->count() > 0)
+				<div class="wrap-iten-in-cart">
+					@if(Session::has('success_message'))
+                        <div class="alert alert-success" >
+							<strong>Success</strong> {{Session::get('success_message')}}
 						</div>
-					</div><!-- Categories widget-->
+                 	@endif
+					@if(Cart::count()>0)
+					<h3 class="box-title">Products Name</h3>
+					<ul class="products-cart">
+						@foreach(Cart::content() as $item)
+						<li class="pr-cart-item">
+							<div class="product-image">
+								<figure><img src="{{ asset('assets/images/products')}}/{{$item->model->image}}" alt="{{$item->model->name}}"></figure>
+							</div>
+							<div class="product-name">
+								<a class="link-to-product" href="{{route('product.details',['slug'=>$item->model->slug])}}">{{$item->model->name}}</a>
+							</div>
+							<div class="price-field produtc-price"><p class="price">৳{{$item->model->regular_price}}</p></div>
+							<div class="quantity">
+								<div class="quantity-input">
+									<input type="text" name="product-quatity" value="{{$item->qty}}" data-max="120" pattern="[0-9]*" >									
+									<a class="btn btn-increase" href="#" wire:click.prevent="increaseQuantity('{{$item->rowId}}')"></a>
+									<a class="btn btn-reduce" href="#" wire:click.prevent="decreaseQuantity('{{$item->rowId}}')"></a>
+								</div>
+							</div> 
+							<div class="price-field sub-total"><p class="price">৳{{Cart::subtotal()}}</p></div>
+							<div class="delete">
+								<a href="#" wire:click.prevent="destroy('{{$item->rowId}}')" class="btn btn-delete" title="">
+									<span>Delete from your cart</span>
+									<i class="fa fa-times-circle" aria-hidden="true"></i>
+								</a>
+							</div>
+						</li>
+						@endforeach												
+					</ul>
+					@else
+						<p>No item in cart</p>
+					@endif
+				</div>
 
-				</div><!--end sitebar-->
+				<div class="summary">
+					<div class="order-summary">
+						<h4 class="title-box">Order Summary</h4>
+						<p class="summary-info"><span class="title">Subtotal</span><b class="index">৳{{Cart::subtotal()}}</b></p>
+						<p class="summary-info"><span class="title">Tax</span><b class="index">৳{{Cart::tax()}}</b></p>
+						<p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p>
+						<p class="summary-info total-info "><span class="title">Total</span><b class="index">৳{{Cart::total()}}</b></p>
+					</div>
+					<div class="checkout-info">
+						<label class="checkbox-field">
+							<input class="frm-input " name="have-code" id="have-code" value="" type="checkbox"><span>I have promo code</span>
+						</label>
+						<a class="btn btn-checkout" href="#"  wire:click.prevent="checkout">Check out</a>
+						<a class="link-to-shop" href="shop.html">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+					</div>
+					<div class="update-clear">
+						<a class="btn btn-clear" href="#"  wire:click.prevent="destroyAll()">Clear Shopping Cart</a>
+						<a class="btn btn-update" href="#">Update Shopping Cart</a>
+					</div>
+				</div>
+				@else
+					<div class="text-center" style="padding: 30px 0;">
+						<h1>Your Cart is Empty!</h1>
+						<p>Add items to it now</p>
+						<a href="/shop" class="btn btn-success">Shop Now</a>
+					</div>
+				@endif
 
-			</div><!--end row-->
+				<div class="wrap-show-advance-info-box style-1 box-in-site">
+					<h3 class="title-box">Most Viewed Products</h3>
+					<div class="wrap-products">
+						<div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"3"},"1200":{"items":"5"}}' >
 
+							<div class="product product-style-2 equal-elem ">
+								<div class="product-thumnail">
+									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+										<figure><img src="{{ asset('assets/images/products/digital_04.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+									</a>
+									<div class="group-flash">
+										<span class="flash-item new-label">new</span>
+									</div>
+									<div class="wrap-btn">
+										<a href="#" class="function-link">quick view</a>
+									</div>
+								</div>
+								<div class="product-info">
+									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+									<div class="wrap-price"><span class="product-price">$250.00</span></div>
+								</div>
+							</div>
+
+							<div class="product product-style-2 equal-elem ">
+								<div class="product-thumnail">
+									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+										<figure><img src="{{ asset('assets/images/products/digital_17.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+									</a>
+									<div class="group-flash">
+										<span class="flash-item sale-label">sale</span>
+									</div>
+									<div class="wrap-btn">
+										<a href="#" class="function-link">quick view</a>
+									</div>
+								</div>
+								<div class="product-info">
+									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+									<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+								</div>
+							</div>
+
+							<div class="product product-style-2 equal-elem ">
+								<div class="product-thumnail">
+									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+										<figure><img src="{{ asset('assets/images/products/digital_15.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+									</a>
+									<div class="group-flash">
+										<span class="flash-item new-label">new</span>
+										<span class="flash-item sale-label">sale</span>
+									</div>
+									<div class="wrap-btn">
+										<a href="#" class="function-link">quick view</a>
+									</div>
+								</div>
+								<div class="product-info">
+									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+									<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+								</div>
+							</div>
+
+							<div class="product product-style-2 equal-elem ">
+								<div class="product-thumnail">
+									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+										<figure><img src="{{ asset('assets/images/products/digital_01.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+									</a>
+									<div class="group-flash">
+										<span class="flash-item bestseller-label">Bestseller</span>
+									</div>
+									<div class="wrap-btn">
+										<a href="#" class="function-link">quick view</a>
+									</div>
+								</div>
+								<div class="product-info">
+									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+									<div class="wrap-price"><span class="product-price">$250.00</span></div>
+								</div>
+							</div>
+
+							<div class="product product-style-2 equal-elem ">
+								<div class="product-thumnail">
+									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+										<figure><img src="{{ asset('assets/images/products/digital_21.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+									</a>
+									<div class="wrap-btn">
+										<a href="#" class="function-link">quick view</a>
+									</div>
+								</div>
+								<div class="product-info">
+									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+									<div class="wrap-price"><span class="product-price">$250.00</span></div>
+								</div>
+							</div>
+
+							<div class="product product-style-2 equal-elem ">
+								<div class="product-thumnail">
+									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+										<figure><img src="{{ asset('assets/images/products/digital_03.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+									</a>
+									<div class="group-flash">
+										<span class="flash-item sale-label">sale</span>
+									</div>
+									<div class="wrap-btn">
+										<a href="#" class="function-link">quick view</a>
+									</div>
+								</div>
+								<div class="product-info">
+									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+									<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+								</div>
+							</div>
+
+							<div class="product product-style-2 equal-elem ">
+								<div class="product-thumnail">
+									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+										<figure><img src="{{ asset('assets/images/products/digital_04.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+									</a>
+									<div class="group-flash">
+										<span class="flash-item new-label">new</span>
+									</div>
+									<div class="wrap-btn">
+										<a href="#" class="function-link">quick view</a>
+									</div>
+								</div>
+								<div class="product-info">
+									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+									<div class="wrap-price"><span class="product-price">$250.00</span></div>
+								</div>
+							</div>
+
+							<div class="product product-style-2 equal-elem ">
+								<div class="product-thumnail">
+									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+										<figure><img src="{{ asset('assets/images/products/digital_05.jpg')}}" width="214" height="214" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+									</a>
+									<div class="group-flash">
+										<span class="flash-item bestseller-label">Bestseller</span>
+									</div>
+									<div class="wrap-btn">
+										<a href="#" class="function-link">quick view</a>
+									</div>
+								</div>
+								<div class="product-info">
+									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
+									<div class="wrap-price"><span class="product-price">$250.00</span></div>
+								</div>
+							</div>
+						</div>
+					</div><!--End wrap-products-->
+				</div>
+
+			</div><!--end main content area-->
 		</div><!--end container-->
 
 	</main>
